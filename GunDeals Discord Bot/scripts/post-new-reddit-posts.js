@@ -21,18 +21,21 @@ postsDB.forEach((value, key, map) => {
 
     var timestamp = new Date(post.created * 1000)
     var converted = new Date(interval * 1000)
+
     console.log(post.title)
     console.log('Bot Sent? ' + post.botSentDeal)
     console.log('Time Check: ' + timestamp >= converted )
     console.log('Bot SEnt Check: ' + post.botSentDeal == false)
     console.log('Logic Check: ' + timestamp >= converted && post.botSentDeal == false)
     console.log('Debug Check Time + BotSent')
+
     if (timestamp >= converted && post.botSentDeal == false) {
         console.log('Debug Start Send')
         var tagUserArr = []
+        let titleArr = post.title.toLowerCase().split(" ")
 
         userDB.forEach((value, key, map) => {
-            if(userDB.get(key).filters.includes(post.flair))
+            if(post.filters.includes(post.flair) ||titleArr.some(r=> post.filters.includes(r)))
                 tagUserArr.push('<@' + key + '>')
         });
 

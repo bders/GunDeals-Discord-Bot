@@ -1,6 +1,8 @@
 const { Channel } = require('discord.js')
 const Enmap = require('enmap')
 
+const channel = client.channels.cache.get('1032973416480915506'); //bot-command channel
+
 const userDB = new Enmap({
     name: 'UserSettingsDatabase',
     autoFetch: true,
@@ -17,9 +19,12 @@ if(userDB.has(currUserID) == false){
         name: currUsername,
         filters: [newFilter]
     })
+
+    channel.send("<@" + currUserID + "> " + newFilter + " has been added to your list of filters.")
 }
 else{
     userDB.push(currUserID,newFilter,"filters")
+    channel.send("<@" + currUserID + "> " + newFilter + " has been added to your list of filters.")
 }
 }
 catch(err){
