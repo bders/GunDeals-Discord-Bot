@@ -7,6 +7,17 @@
     "discord.js": "^13.8.0",
     "fstorm": "latest",
     "jimp": "latest",
-    "snoowrap": "^1.23.0"
+    "snoowrap": "^1.23.0",
+    "@discordjs/voice": "latest",
+    "@discordjs/opus": "latest",
+    "ffmpeg-static": "latest",
+    "tweetnacl": "latest",
+    "youtube-dl-exec": "^2.0.2",
+    "ytdl-core": "^4.10.0",
+    "node-cron": "latest",
+    "node-fetch2": "latest",
+    "enmap": "latest",
+    "better-sqlite3": "7.5.1",
+    "node": "16.18.0"
   }
 }
